@@ -2,7 +2,8 @@ int BinarySearch_Insert(int* nums, int numsSize, int target) {
     
     int left = 0;
     int right = numsSize - 1;
-   
+
+    // target is not in the sorted array
     if(nums[left] > target){
         return left;
     }
@@ -13,7 +14,7 @@ int BinarySearch_Insert(int* nums, int numsSize, int target) {
     
     while(left <= right){
         
-        int mid = left + ( right - left ) / 2; // 可避免溢位   
+        int mid = left + ( right - left ) / 2; // avoid overflow  
         // int mid = (left + right) / 2;  //無條件捨去小數點:取中間偏左的位置
         
         if(nums[mid] > target){
